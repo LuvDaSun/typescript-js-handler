@@ -54,7 +54,7 @@ module.exports = function(basePath, options) {
 
                 if (req.fresh) return res.sendStatus(304);
 
-                res.write("env = "  + JSON.stringify(process.env) + ";");
+                res.write("process = {env: "  + JSON.stringify(process.env) + "};");
                 res.write("require = " + JSON.stringify({
                     urlArgs: options.parameterName + "=" + options.parameterValue + "",
                     deps: [moduleId],
